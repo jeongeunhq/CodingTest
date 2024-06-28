@@ -1,3 +1,3 @@
 def solution(n):
-    answer = [int(char) for char in reversed(str(n))]
+    answer = list(map(int, reversed(str(n))))
     return answer
