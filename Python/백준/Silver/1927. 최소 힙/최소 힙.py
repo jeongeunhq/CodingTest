@@ -12,10 +12,10 @@ for i in range(n):
         heapq.heappush(heap,x)
     #x가 0인 경우
     else:
-        #힙에 아무것도 없는 경우
+        
         if len(heap)!=0:
             #힙에서 가장 작은 값 출력
             print(heapq.heappop(heap))
-        #힙에 값이 있는 경우
+       
         else:
             print(0)
