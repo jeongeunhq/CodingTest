@@ -1,26 +1,29 @@
-# 1874번 스택 수열
-n = int(input())
-stack, ans, find = [], [], True
-# 숫자 1부터 시작
-now = 1
-for _ in range(n):
+count = 1
+temp = True
+stack = []
+op = []
+
+N = int(input())
+for i in range(N):
     num = int(input())
-    # 스택 쌓기 Push
-    while now <= num:
-        stack.append(now)
-        ans.append('+')
-        now += 1
-    # 스택 꺼내기 Pop
+    # num이하 숫자까지 스택에 넣기
+    while count <= num:
+        stack.append(count)
+        op.append('+')
+        count += 1
+
+    # num이랑 스택 맨 위 숫자가 동일하다면 제거
     if stack[-1] == num:
         stack.pop()
-        ans.append('-')
-    # 불가능한 경우
+        op.append('-')
+    # 스택 수열을 만들 수 없으므로 NO
     else:
-        find = False
+        temp = False
+        break
 
-# 정답 출력
-if not find: # 불가능하다면
-    print('NO')
+# 스택 수열을 만들수 있는지 여부에 따라 출력 
+if temp == False:
+    print("NO")
 else:
-    for i in ans: # 가능하다면
+    for i in op:
         print(i)
