@@ -1,11 +1,11 @@
 function solution(n)
 {
     var answer = 0;
-    const arr=String(n).split('');
+    const str=n.toString();
+    const arr=str.split('');
     for(var i=0; i<arr.length; i++){
-        answer+=Number(arr[i])
+        var num=Number(arr[i])
+        answer+=num
     }
-
-
     return answer;
 }
